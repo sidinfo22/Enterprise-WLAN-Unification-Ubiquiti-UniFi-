@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ubiquiti UniFi WLAN Unification Master Report | Summit Care Medical Clinic</title>
+    <meta
+      name="description"
+      content="Standalone master report for the Summit Care Medical Clinic Ubiquiti UniFi WLAN unification project covering UniFi Cloud Gateway, Cloud Key Gen2, U7 Pro XL access points, Windows Server NPS/RADIUS, VLANs, guest Wi-Fi, VPN, cloud monitoring, and wireless mesh."
+    />
+    <link rel="stylesheet" href="master-report.css?v=print-bw-2" />
+  </head>
+  <body>
+    <main class="report-shell">
+      <section class="hero title-page" id="top">
+        <span class="eyebrow">Master Report</span>
+        <h1>Ubiquiti UniFi WLAN Unification Project</h1>
+        <p class="subtitle">
+          A Summit Care Medical Clinic infrastructure report focused on unifying
+          wireless, routing, VPN, guest access, RADIUS authentication, cloud management,
+          and branch visibility across virtual office locations throughout the five
+          boroughs.
+        </p>
+        <div class="title-meta">
+          <span class="title-chip">UniFi Cloud Gateway</span>
+          <span class="title-chip">Cloud Key Gen2</span>
+          <span class="title-chip">U7 Pro XL Access Points</span>
+          <span class="title-chip">Windows Server NPS/RADIUS</span>
+        </div>
+        <div class="title-signoff">
+          <div class="title-signoff-card">
+            <h3>Purpose & Goal</h3>
+            <p>
+              Build one supportable UniFi operating model for Summit Care offices so
+              wireless access, routing, VPN, monitoring, guest access, and provisioning
+              can be managed consistently from a cloud-connected dashboard.
+            </p>
+          </div>
+          <div class="title-signoff-card">
+            <h3>Design Principle</h3>
+            <p>
+              Keep network access centralized through UniFi while using Windows Server
+              Active Directory and NPS/RADIUS for identity-based staff wireless
+              authentication.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="toc">
+        <h2>Table Of Contents</h2>
+        <div class="toc-grid">
+          <a href="#summary">1. Executive Summary</a>
+          <a href="#overview">2. Overview & Strategy</a>
+          <a href="#architecture">3. Architecture & Configuration</a>
+          <a href="#operations">4. Operations, VPN & Monitoring</a>
+          <a href="#risk">5. Risk, Governance & Conclusion</a>
+        </div>
+      </section>
+
+      <section class="section" id="summary">
+        <div class="kicker">Executive Focus</div>
+        <h2>What This Project Is Designed To Prove</h2>
+        <p class="lead">
+          Summit Care Medical Clinic now operates many offices throughout the five
+          boroughs. The project proves that Ubiquiti UniFi can give the clinic one
+          repeatable platform for branch routing, secure staff Wi-Fi, guest access,
+          cloud monitoring, remote provisioning, VPN, and wireless coverage.
+        </p>
+        <div class="three-col">
+          <div class="mini-card">
+            <h4>Unified Management</h4>
+            <p>
+              The Cloud Key Gen2 hosts UniFi Network so IT can adopt devices, see
+              topology, monitor clients, push SSIDs, update firmware, and manage sites
+              through local private access or unifi.ui.com.
+            </p>
+          </div>
+          <div class="mini-card">
+            <h4>Enterprise Staff Wireless</h4>
+            <p>
+              Staff Wi-Fi authenticates through Windows Server NPS/RADIUS using UDP
+              1812 for authentication and UDP 1813 for accounting, tying access to
+              Active Directory users and groups. Managed Summit Care devices can also
+              use certificate-based access so trusted endpoints are validated before
+              joining the staff WLAN.
+            </p>
+          </div>
+          <div class="mini-card">
+            <h4>Guest Isolation</h4>
+            <p>
+              Guest Wi-Fi uses a separate VLAN, subnet, firewall policy, and UniFi
+              captive portal so patients and visitors receive internet access without
+              reaching internal clinic resources.
+            </p>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Important design note:</strong> this is a WLAN unification and cloud
+          management project, not just an access point installation. The value comes
+          from tying routing, wireless, RADIUS, guest policy, VPN, monitoring, and
+          provisioning into one repeatable UniFi model.
+        </div>
+      </section>
+
+      <section class="section" id="overview">
+        <div class="kicker">Overview & Strategy</div>
+        <h2>Purpose, Goals & Summit Care Blueprint</h2>
+        <p class="lead">
+          Summit Care needed a consistent way to manage wireless and network access
+          across multiple clinic offices. UniFi provides the common controller,
+          gateway, wireless, VPN, and monitoring layer, while Windows Server on
+          Proxmox continues to provide domain identity and RADIUS policy.
+        </p>
+        <div class="two-col">
+          <div class="mini-card">
+            <h4>Operational Objectives</h4>
+            <ul class="workflow-list">
+              <li>Unify multiple Summit Care offices under one UniFi management experience.</li>
+              <li>Deploy U7 Pro XL access points with consistent SSIDs, VLANs, and roaming behavior.</li>
+              <li>Use Windows Server NPS/RADIUS for secure staff wireless authentication.</li>
+              <li>Separate staff, guest, management, clinical, and VPN traffic with VLANs and firewall rules.</li>
+              <li>Support private GUI access by management IP and remote access through unifi.ui.com.</li>
+            </ul>
+          </div>
+          <div class="mini-card">
+            <h4>Readiness Snapshot</h4>
+            <div class="bar-list">
+              <div class="bar-row">
+                <span>Centralized UniFi visibility</span>
+                <div class="bar-track"><i style="width: 96%;"></i></div>
+                <strong>96%</strong>
+              </div>
+              <div class="bar-row">
+                <span>Staff wireless authentication strength</span>
+                <div class="bar-track"><i style="width: 92%;"></i></div>
+                <strong>92%</strong>
+              </div>
+              <div class="bar-row">
+                <span>Guest isolation maturity</span>
+                <div class="bar-track"><i style="width: 90%;"></i></div>
+                <strong>90%</strong>
+              </div>
+              <div class="bar-row">
+                <span>Remote support efficiency</span>
+                <div class="bar-track"><i style="width: 94%;"></i></div>
+                <strong>94%</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3>Summit Care UniFi Blueprint Snapshot</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Role</th>
+              <th>Value To The Design</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>UniFi Cloud Gateway</td>
+              <td>Edge router and security gateway</td>
+              <td>Routes office traffic, enforces VLAN boundaries, provides VPN, and anchors branch connectivity</td>
+            </tr>
+            <tr>
+              <td>UniFi Cloud Key Gen2</td>
+              <td>UniFi Network controller</td>
+              <td>Hosts adoption, monitoring, configuration, firmware, remote access, and backup workflows</td>
+            </tr>
+            <tr>
+              <td>Ubiquiti U7 Pro XL access points</td>
+              <td>Wi-Fi 7 access layer</td>
+              <td>Provides high-capacity wireless coverage for staff, clinical, guest, and mobile devices</td>
+            </tr>
+            <tr>
+              <td>Dell PowerEdge R740xd with Proxmox</td>
+              <td>Virtualization host</td>
+              <td>Runs Windows Server domain controller and NPS/RADIUS services</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="architecture">
+        <div class="kicker">Architecture & Configuration</div>
+        <h2>Cloud Key, Gateway, RADIUS, VLANs & Wireless Mesh</h2>
+        <p class="lead">
+          The technical build centers on three layers: the UniFi gateway for routing,
+          firewalling, VLANs and VPN; the Cloud Key Gen2 for network management; and
+          Windows Server NPS/RADIUS for staff identity authentication.
+        </p>
+        <h3>Core Network Design</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Network</th>
+              <th>Example VLAN/Subnet</th>
+              <th>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Management</td>
+              <td>VLAN 10 / 10.10.10.0/24</td>
+              <td>Cloud Key, gateway, switches, AP management, and administrator interfaces</td>
+            </tr>
+            <tr>
+              <td>Staff Wi-Fi</td>
+              <td>VLAN 20 / 10.20.20.0/24</td>
+              <td>Domain-authenticated employee devices</td>
+            </tr>
+            <tr>
+              <td>Clinical devices</td>
+              <td>VLAN 30 / 10.30.30.0/24</td>
+              <td>Approved clinic systems and office equipment</td>
+            </tr>
+            <tr>
+              <td>Guest Wi-Fi</td>
+              <td>VLAN 40 / 10.40.40.0/24</td>
+              <td>Internet-only access through captive portal controls</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="two-col">
+          <div class="mini-card">
+            <h4>Cloud Key Gen2 Setup</h4>
+            <ul class="workflow-list">
+              <li>Connect the Cloud Key Gen2 to the management network and reserve a private management IP.</li>
+              <li>Open the local GUI for first-time setup and controller hardening.</li>
+              <li>Link authorized cloud access through unifi.ui.com and require protected admin accounts.</li>
+              <li>Update firmware, create site naming standards, configure backups, and adopt UniFi devices.</li>
+            </ul>
+          </div>
+          <div class="mini-card">
+            <h4>Windows NPS/RADIUS Setup</h4>
+            <ul class="workflow-list">
+              <li>Install Network Policy Server on the Windows Server VM running on Proxmox.</li>
+              <li>Register NPS in Active Directory and create policies for approved Summit Care staff groups.</li>
+              <li>Add UniFi infrastructure as RADIUS clients with shared secrets.</li>
+              <li>Permit UDP 1812 and UDP 1813 between UniFi and Windows Server.</li>
+              <li>Enable certificate-based 802.1X access, such as EAP-TLS or PEAP with certificate validation, for managed Summit Care devices.</li>
+            </ul>
+          </div>
+        </div>
+        <h3>Certificate-Based UniFi Access</h3>
+        <p>
+          Certificate-based access strengthens the staff SSID by validating the device,
+          not just the person typing a password. Summit Care can issue certificates from
+          the Windows certificate authority to approved domain-joined devices. During
+          the UniFi 802.1X login flow, the U7 Pro XL access points forward the request
+          to Windows NPS, NPS validates the certificate and policy, and UniFi places
+          the device onto the proper staff VLAN only after authentication succeeds.
+        </p>
+        <h3>Guest Portal and Wireless Mesh</h3>
+        <p>
+          The guest SSID lands on a dedicated VLAN and subnet, uses a UniFi captive
+          portal with Summit Care branding, and is blocked from private internal
+          networks. For one two-floor office without Ethernet to the second floor,
+          wireless meshing was enabled so a second-floor U7 Pro XL could uplink to a
+          wired access point and extend coverage where cabling was not available.
+        </p>
+      </section>
+
+      <section class="section" id="operations">
+        <div class="kicker">Operations, VPN & Monitoring</div>
+        <h2>Cloud Operations, VPN, Monitoring & Provisioning</h2>
+        <p class="lead">
+          Summit Care can manage UniFi locally through private management addresses or
+          remotely through unifi.ui.com. VPN access gives authorized administrators a
+          secure path back into approved internal networks without exposing management
+          interfaces directly to the internet.
+        </p>
+        <div class="three-col">
+          <div class="mini-card">
+            <h4>Private GUI Access</h4>
+            <p>
+              Administrators can open the Cloud Key or gateway by private IP while on
+              site or connected through VPN, which supports local recovery and direct
+              management.
+            </p>
+          </div>
+          <div class="mini-card">
+            <h4>Cloud Access</h4>
+            <p>
+              UniFi cloud access provides remote visibility into offices, devices,
+              clients, alerts, topology, firmware, and adoption state from one place.
+            </p>
+          </div>
+          <div class="mini-card">
+            <h4>VPN Access</h4>
+            <p>
+              The UniFi gateway provides VPN connectivity using the appropriate method,
+              such as Teleport, WireGuard, or L2TP/IPsec based on support needs.
+            </p>
+          </div>
+        </div>
+        <h3>Operational Runbook</h3>
+        <ul class="workflow-list">
+          <li>Open UniFi Network through unifi.ui.com or the private controller address.</li>
+          <li>Review gateway health, WAN status, AP status, switch uplinks, VLAN assignment, and client experience.</li>
+          <li>For staff Wi-Fi issues, verify RADIUS reachability to Windows Server NPS on UDP 1812 and UDP 1813, then confirm certificate trust for managed devices.</li>
+          <li>For guest issues, test captive portal load, guest VLAN addressing, DNS, firewall restrictions, and internet egress.</li>
+          <li>For mesh issues, review wireless uplink quality, retries, channel utilization, and second-floor AP placement.</li>
+        </ul>
+      </section>
+
+      <section class="section" id="risk">
+        <div class="kicker">Risk, Governance & Conclusion</div>
+        <h2>Security Controls, Governance & Final Summary</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Risk</th>
+              <th>Impact</th>
+              <th>Mitigation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>RADIUS or domain controller outage</td>
+              <td>Staff may be unable to authenticate to enterprise Wi-Fi</td>
+              <td>Monitor NPS, protect the Windows Server VM, and document fallback access</td>
+            </tr>
+            <tr>
+              <td>Guest VLAN leakage</td>
+              <td>Visitors could reach internal clinic assets</td>
+              <td>Use explicit deny rules from guest to private networks and test segmentation</td>
+            </tr>
+            <tr>
+              <td>Cloud admin account compromise</td>
+              <td>Remote UniFi settings could be changed maliciously</td>
+              <td>Require MFA, least privilege, admin review, and sensitive-change alerting</td>
+            </tr>
+            <tr>
+              <td>Mesh uplink weakness</td>
+              <td>Second-floor performance may drop if backhaul quality is poor</td>
+              <td>Monitor uplink quality and add Ethernet cabling when feasible</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout">
+          <strong>Final summary:</strong> the project demonstrates a complete UniFi
+          WLAN unification design for Summit Care Medical Clinic. The UniFi gateway
+          provides routing, security, and VPN; the Cloud Key Gen2 provides the
+          management plane; U7 Pro XL access points deliver the wireless layer;
+          Windows Server NPS connects staff Wi-Fi to domain identity and
+          certificate-based access; and VLANs, guest portal controls, cloud monitoring,
+          and mesh uplinks make the design practical across real clinic offices in the
+          five boroughs.
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

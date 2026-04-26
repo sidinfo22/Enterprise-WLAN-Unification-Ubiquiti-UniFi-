@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubiquiti UniFi WLAN Unification | Summit Care UniFi WLAN Unification</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+<div class="background-wrapper">
+  <div class="notification-bar">Ubiquiti UniFi WLAN Unification by Sidiq Daniel</div>
+  <div class="sticky-header">
+    <div class="logo">
+      <a href="index.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/daters.png" alt="Summit Care UniFi logo" class="logo-image">
+      </a>
+      <a href="index.html" class="logo-text-link">Summit Care UniFi WLAN</a>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav class="dropdown-menu">
+      <ul>
+        <li class="home-item"><a href="index.html" class="home-link">Home</a></li>
+        <li class="menu-item" onclick="toggleSubMenu()">
+          <span class="menu-title">Index <i class="arrow">&#x25BC;</i></span>
+          <ul class="sub-menu">
+            <li data-href="objectives.html">Objectives & UniFi Strategy</li>
+            <li data-href="assets.html">UniFi Assets & Inventory</li>
+            <li data-href="deploy.html">Cloud Key, Gateway & RADIUS Deployment</li>
+            <li data-href="diagrams.html">WLAN Diagrams & Topologies</li>
+            <li data-href="segmentation.html">VLANs, Subnets & Guest Isolation</li>
+            <li data-href="voip.html">VPN, Cloud Operations & Monitoring</li>
+            <li data-href="cloud.html">UniFi Cloud Management</li>
+            <li data-href="programming.html">Provisioning, Templates & Automation</li>
+            <li data-href="cybersecurity.html">Security Controls & Certificate Access</li>
+            <li data-href="hippa.html">HIPAA-Aware Governance & Risk</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <section class="intro-section">
+    <div class="button-like">Summit Care Medical Clinic</div>
+    <h1>Ubiquiti UniFi WLAN Unification</h1>
+    <p>Unifying Summit Care Medical Clinic offices across the five boroughs with UniFi Cloud Gateway, Cloud Key Gen2, U7 Pro XL access points, Windows Server NPS/RADIUS, certificate-based staff access, guest Wi-Fi, VPN, monitoring, and wireless mesh.</p>
+    <div class="button-group">
+      <button class="primary-button" onclick="window.location.href='deploy.html';">View Deployment</button>
+      <button class="secondary-button"><a href="diagrams.html" class="button-link">Explore Summit Care<br>Blueprint</a></button>
+    </div>
+    <div class="review-section">
+      <span class="star">★ ★ ★ ★ ★</span>
+      <p>UniFi cloud management, RADIUS, certificates, VLANs, VPN, guest access, and mesh wireless in one unified project.</p>
+    </div>
+  </section>
+
+  <div class="auto-scrolling-reel">
+    <div class="reel-container">
+      <span><i class="fas fa-award"></i> UniFi Cloud Gateway</span>
+      <span><i class="fas fa-award"></i> Cloud Key Gen2</span>
+      <span><i class="fas fa-award"></i> U7 Pro XL Access Points</span>
+      <span><i class="fas fa-award"></i> Windows NPS/RADIUS</span>
+      <span><i class="fas fa-award"></i> Certificate-Based 802.1X</span>
+      <span><i class="fas fa-award"></i> Guest VLAN & Captive Portal</span>
+      <span><i class="fas fa-award"></i> UniFi VPN</span>
+      <span><i class="fas fa-award"></i> Wireless Mesh</span>
+    </div>
+  </div>
+
+  <section class="project-summary-section">
+        <div class="project-summary-icon"><i class="fas fa-network-wired"></i></div>
+        <h2>Project Overview</h2>
+        <p class="project-summary-paragraph">Summit Care moved from disconnected office wireless into one UniFi-managed network model. Each office can be adopted, monitored, provisioned, segmented, and supported through UniFi while still using Windows Server domain services for identity and RADIUS policy.</p>
+        <ul class="workflow-list"><li><i class="fas fa-check-circle"></i> One UniFi management plane for branch gateways, access points, clients, topology, alerts, firmware, and provisioning.</li>
+<li><i class="fas fa-check-circle"></i> U7 Pro XL access points deployed across offices for high-capacity staff, clinical, and guest wireless coverage.</li>
+<li><i class="fas fa-check-circle"></i> Windows Server NPS/RADIUS integration on UDP 1812 and UDP 1813 for enterprise wireless authentication.</li>
+<li><i class="fas fa-check-circle"></i> Certificate-based 802.1X access for managed Summit Care devices through Windows certificate services.</li>
+<li><i class="fas fa-check-circle"></i> Guest Wi-Fi on a separate VLAN/subnet with captive portal branding and private-network blocking.</li></ul>
+        
+        
+      </section>
+<section class="project-summary-section">
+        <div class="project-summary-icon"><i class="fas fa-network-wired"></i></div>
+        <h2>Unified Operating Model</h2>
+        <p class="project-summary-paragraph">The project is not just a Wi-Fi refresh. It is a full WLAN unification effort that combines routing, wireless, VLANs, VPN, identity, cloud visibility, and repeatable deployment standards.</p>
+        
+        <div class="three-col"><div class="mini-card"><h4>UniFi Cloud Gateway</h4><p>Routes each office, enforces VLAN boundaries, provides VPN, and anchors site connectivity.</p></div>
+<div class="mini-card"><h4>Cloud Key Gen2</h4><p>Hosts UniFi Network for adoption, monitoring, configuration, backup, firmware, and cloud access through unifi.ui.com.</p></div>
+<div class="mini-card"><h4>Windows NPS/RADIUS</h4><p>Validates staff identity and certificates before UniFi places users or devices onto trusted networks.</p></div></div>
+        
+      </section>
+
+  <section class="integration-section">
+    <div class="integration-content">
+      <h2>Summit Care UniFi Unification</h2>
+      <p>The full project standardizes how Summit Care deploys, monitors, secures, and supports wireless across multiple clinic offices. The result is one clear WLAN operating model instead of disconnected branch configurations.</p>
+      <button class="primary-button" onclick="window.location.href='index.html';">Back Home</button>
+    </div>
+  </section>
+</div>
+<script src="script2.js"></script>
+</body>
+</html>

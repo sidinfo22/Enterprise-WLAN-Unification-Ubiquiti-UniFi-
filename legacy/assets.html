@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFi Assets & Inventory | Summit Care UniFi WLAN Unification</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+<div class="background-wrapper">
+  <div class="notification-bar">Ubiquiti UniFi WLAN Unification by Sidiq Daniel</div>
+  <div class="sticky-header">
+    <div class="logo">
+      <a href="index.html" target="_blank" rel="noopener noreferrer">
+        <img src="images/daters.png" alt="Summit Care UniFi logo" class="logo-image">
+      </a>
+      <a href="index.html" class="logo-text-link">Summit Care UniFi WLAN</a>
+    </div>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav class="dropdown-menu">
+      <ul>
+        <li class="home-item"><a href="index.html" class="home-link">Home</a></li>
+        <li class="menu-item" onclick="toggleSubMenu()">
+          <span class="menu-title">Index <i class="arrow">&#x25BC;</i></span>
+          <ul class="sub-menu">
+            <li data-href="objectives.html">Objectives & UniFi Strategy</li>
+            <li data-href="assets.html">UniFi Assets & Inventory</li>
+            <li data-href="deploy.html">Cloud Key, Gateway & RADIUS Deployment</li>
+            <li data-href="diagrams.html">WLAN Diagrams & Topologies</li>
+            <li data-href="segmentation.html">VLANs, Subnets & Guest Isolation</li>
+            <li data-href="voip.html">VPN, Cloud Operations & Monitoring</li>
+            <li data-href="cloud.html">UniFi Cloud Management</li>
+            <li data-href="programming.html">Provisioning, Templates & Automation</li>
+            <li data-href="cybersecurity.html">Security Controls & Certificate Access</li>
+            <li data-href="hippa.html">HIPAA-Aware Governance & Risk</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <section class="intro-section">
+    <div class="button-like">Inventory</div>
+    <h1>UniFi Assets, Inventory & Procurement</h1>
+    <p>Documenting the hardware, virtual infrastructure, and identity services used to support Summit Care’s unified WLAN.</p>
+    <div class="button-group">
+      <button class="primary-button" onclick="window.location.href='deploy.html';">View Deployment</button>
+      <button class="secondary-button"><a href="diagrams.html" class="button-link">Explore Summit Care<br>Blueprint</a></button>
+    </div>
+    <div class="review-section">
+      <span class="star">★ ★ ★ ★ ★</span>
+      <p>UniFi cloud management, RADIUS, certificates, VLANs, VPN, guest access, and mesh wireless in one unified project.</p>
+    </div>
+  </section>
+
+  <div class="auto-scrolling-reel">
+    <div class="reel-container">
+      <span><i class="fas fa-award"></i> UniFi Cloud Gateway</span>
+      <span><i class="fas fa-award"></i> Cloud Key Gen2</span>
+      <span><i class="fas fa-award"></i> U7 Pro XL Access Points</span>
+      <span><i class="fas fa-award"></i> Windows NPS/RADIUS</span>
+      <span><i class="fas fa-award"></i> Certificate-Based 802.1X</span>
+      <span><i class="fas fa-award"></i> Guest VLAN & Captive Portal</span>
+      <span><i class="fas fa-award"></i> UniFi VPN</span>
+      <span><i class="fas fa-award"></i> Wireless Mesh</span>
+    </div>
+  </div>
+
+  <section class="project-summary-section">
+        <div class="project-summary-icon"><i class="fas fa-boxes"></i></div>
+        <h2>Core Asset Stack</h2>
+        <p class="project-summary-paragraph">The project standardizes on Ubiquiti UniFi hardware at the network edge and Windows Server services on Proxmox for identity and RADIUS.</p>
+        
+        
+        <div class="report-table-shell"><table class="report-table">
+    <thead><tr><th>Asset</th><th>Role</th><th>Project Value</th></tr></thead>
+    <tbody><tr><td>UniFi Cloud Gateway</td><td>Router, firewall, VLAN gateway, VPN endpoint</td><td>Provides the routed and secured edge for each office.</td></tr><tr><td>UniFi Cloud Key Gen2</td><td>Network controller</td><td>Hosts UniFi Network for adoption, monitoring, backups, and cloud access.</td></tr><tr><td>U7 Pro XL access points</td><td>Wireless access layer</td><td>Delivers modern high-capacity Wi-Fi for staff, guest, and clinical devices.</td></tr><tr><td>Dell PowerEdge R740xd</td><td>Proxmox host</td><td>Runs Windows Server workloads for AD, DNS, NPS/RADIUS, and certificate services.</td></tr><tr><td>Windows Server domain controller</td><td>AD DS, DNS, NPS, CA</td><td>Provides identity, policy, certificate, and RADIUS authentication services.</td></tr></tbody>
+  </table></div>
+      </section>
+
+  <section class="integration-section">
+    <div class="integration-content">
+      <h2>Summit Care UniFi Unification</h2>
+      <p>The full project standardizes how Summit Care deploys, monitors, secures, and supports wireless across multiple clinic offices. The result is one clear WLAN operating model instead of disconnected branch configurations.</p>
+      <button class="primary-button" onclick="window.location.href='index.html';">Back Home</button>
+    </div>
+  </section>
+</div>
+<script src="script2.js"></script>
+</body>
+</html>
